@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/jdk1.8.0_111/db/lib/derby.jar"/>
+	<classpathentry kind="lib" path="C:/jdk1.8.0_111/db/lib/derbyclient.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

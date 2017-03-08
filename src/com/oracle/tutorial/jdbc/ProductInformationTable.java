@@ -70,7 +70,6 @@ public class ProductInformationTable {
     this.con = connArg;
     this.dbName = dbNameArg;
     this.dbms = dbmsArg;
-
   }
   
   public void populateTable(String fileName) throws SQLException,

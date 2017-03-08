@@ -50,14 +50,12 @@ public class CoffeesTable {
   private String dbName;
   private Connection con;
   private String dbms;
-
-
+  
   public CoffeesTable(Connection connArg, String dbNameArg, String dbmsArg) {
     super();
     this.con = connArg;
     this.dbName = dbNameArg;
     this.dbms = dbmsArg;
-
   }
 
   public void createTable() throws SQLException {
@@ -66,7 +64,13 @@ public class CoffeesTable {
       "SUP_ID int NOT NULL, " + "PRICE numeric(10,2) NOT NULL, " +
       "SALES integer NOT NULL, " + "TOTAL integer NOT NULL, " +
       "PRIMARY KEY (COF_NAME) ) " ; 
-     //+ "FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID))";
+     
+  //  "create table COFFEES " + "(COF_NAME varchar(32) NOT NULL, " +
+  //  "SUP_ID int NOT NULL, " + "PRICE numeric(10,2) NOT NULL, " +
+  //  "SALES integer NOT NULL, " + "TOTAL integer NOT NULL, " +
+  //  "PRIMARY KEY (COF_NAME) + " ; 
+  //  "FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID))";
+    
     Statement stmt = null;
     try {
       stmt = con.createStatement();
@@ -98,6 +102,19 @@ public class CoffeesTable {
       if (stmt != null) { stmt.close(); }
     }
   }
+  
+  public void addRow(String name, int supId, float price, int sales, int total ) throws SQLException {
+	  Statement stmt = null;
+	  try {
+		  stmt = con.createStatement();		  
+		  stmt.executeUpdate("insert into COFFEES " +
+              "values('" + name + "'," + supId + ", " + price + ", " + sales + "," + total + ")");
+	  } catch (SQLException e) {
+	      JDBCTutorialUtilities.printSQLException(e);
+	  } finally {
+	      if (stmt != null) { stmt.close(); }
+	  }
+   }
 
 
   public void updateCoffeeSales(HashMap<String, Integer> salesForWeek) throws SQLException {
@@ -161,6 +178,26 @@ public class CoffeesTable {
     } finally {
       if (stmt != null) { stmt.close(); }
     }
+  }
+
+  public void doubePrices() throws SQLException {
+	    Statement stmt = null;
+	    try {
+	      stmt =
+	          con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	      ResultSet uprs = stmt.executeQuery("SELECT * FROM COFFEES");
+
+	      while (uprs.next()) {
+	        float f = uprs.getFloat("PRICE");
+	        uprs.updateFloat("PRICE", f * 2);
+	        uprs.updateRow();
+	      }
+
+	    } catch (SQLException e) {
+	      JDBCTutorialUtilities.printSQLException(e);
+	    } finally {
+	      if (stmt != null) { stmt.close(); }
+	    }
   }
 
 
@@ -346,6 +383,7 @@ public class CoffeesTable {
       if (this.dbms.equals("mysql")) {
         stmt.executeUpdate("DROP TABLE IF EXISTS COFFEES");
       } else if (this.dbms.equals("derby")) {
+    	System.out.println("Drop Derby COFFEES");  
         stmt.executeUpdate("DROP TABLE COFFEES");
       }
     } catch (SQLException e) {

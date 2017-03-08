@@ -1,19 +1,17 @@
 set DERBY_HOME=C:\jdk1.8.0_111\db
 set PATH=%DERBY_HOME%\bin;%PATH%
 
-set JAVA_HOME=C:\jdk1.8.0_111
+#set JAVA_HOME=C:\jdk1.8.0_111
 
-set PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;
-set PATH=C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\eclipse;
-set PATH=C:\jdk1.8.0_111\db\bin;%PATH%
-set PATH=C:\jdk1.8.0_111\bin;C:\jdk1.8.0_111\lib\i386;C:\jdk1.8.0_111\bin\client;%PATH%
-set PATH=%DERBY_HOME%\bin;%PATH% 
+
+set PATH=C:\jdk1.8.0_111\bin;C:\jdk1.8.0_111\lib\i386;C:\jdk1.8.0_111\bin\client;C:\jdk1.8.0_111\db\bin;%PATH%
+
  
 java -jar %DERBY_HOME%\lib\derbyrun.jar
 
 setEmbeddedCP
 #################################
-## start server se db gia creato
+## start server se db gia creato nella root 
 #################################
 java -jar %DERBY_HOME%\lib\derbyrun.jar server start 
 #################################

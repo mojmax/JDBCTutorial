@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Fri Mar 03 16:52:25 CET 2017:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-015a-94df-46b2-000000a31178
-sulla directory di database C:\Users\mmojetta\Desktop\JdbcWorkspace\JDBCTutorial\mojodb con caricatore classi sun.misc.Launcher$AppClassLoader@1d16e93 
+Tue Mar 07 17:30:37 CET 2017:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-015a-a99b-b0fb-000000d68260
+sulla directory di database C:\Users\mmojetta\Desktop\JdbcWorkspace\JDBCTutorial\firstdb con caricatore classi sun.misc.Launcher$AppClassLoader@1d16e93 
 Caricato da file:/C:/jdk1.8.0_111/db/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_111-b14

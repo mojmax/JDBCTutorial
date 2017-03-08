@@ -1,7 +1,8 @@
 package com.derby.tutorial.jdbc;
 
+import com.oracle.tutorial.jdbc.CoffeesTable;
 import java.io.IOException;
-import java.lang.Math.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,9 +17,15 @@ public class MyProvaDerby {
 			connURL = new MyConnectionURL();
 			System.out.println("URL" + connURL.getConnectionURL());
 			
+			
 			try {
 				conn = DriverManager.getConnection(connURL.getConnectionURL());
 				System.out.println("Connected to database " + connURL.getDBName());
+				CoffeesTable cof = new CoffeesTable(conn , connURL.getDBName(), connURL.getDbms());
+				//cof.dropTable();
+				cof.createTable();
+				cof.populateTable();
+				CoffeesTable.viewTable(conn);
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

@@ -65,8 +65,8 @@ public class CoffeesTable {
       "create table COFFEES " + "(COF_NAME varchar(32) NOT NULL, " +
       "SUP_ID int NOT NULL, " + "PRICE numeric(10,2) NOT NULL, " +
       "SALES integer NOT NULL, " + "TOTAL integer NOT NULL, " +
-      "PRIMARY KEY (COF_NAME), " +
-      "FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID))";
+      "PRIMARY KEY (COF_NAME) ) " ; 
+     //+ "FOREIGN KEY (SUP_ID) REFERENCES SUPPLIERS (SUP_ID))";
     Statement stmt = null;
     try {
       stmt = con.createStatement();

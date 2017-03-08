@@ -5,7 +5,7 @@
   <entry key="dbms">derby</entry>
   <entry key="jar_file">C:\\Users\\mmojetta\\Desktop\\JdbcWorkspace\\JDBCTutorial\\lib\\JDBCTutorial.jar</entry>
   <entry key="driver">org.apache.derby.jdbc.EmbeddedDriver</entry>
-  <entry key="database_name">testdb</entry>
+  <entry key="database_name">firstdb</entry>
   <entry key="user_name"></entry>
   <entry key="password"></entry>
   <entry key="server_name">localhost</entry>

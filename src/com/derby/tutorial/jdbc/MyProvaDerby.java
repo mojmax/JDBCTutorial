@@ -39,7 +39,7 @@ public class MyProvaDerby {
 				        "update APP.COFFEES " +
 				        "set SALES = ? where COF_NAME = ?";
 				prep = conn.prepareStatement(stringUpdateSales);
-				prep.setInt(1, 3);
+				prep.setInt(1, 6);
 				prep.setString(2, "Pluto");
 				prep.executeUpdate();
 				

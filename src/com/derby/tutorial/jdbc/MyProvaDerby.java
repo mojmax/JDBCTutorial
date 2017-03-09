@@ -5,6 +5,9 @@ import com.oracle.tutorial.jdbc.JDBCTutorialUtilities;
 
 import jdk.nashorn.internal.codegen.DumpBytecode;
 
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.sql.Connection;
@@ -33,7 +36,7 @@ public class MyProvaDerby {
 				//cof.addRow("Pluto", 49, 22.0f, 0, 0);
 				cof.viewTable(conn);
 				//cof.doubePrices();
-				//cof.viewTable(conn);
+				cof.viewTable(conn);
 				PreparedStatement prep = null;
 				String stringUpdateSales =
 				        "update APP.COFFEES " +
@@ -44,6 +47,7 @@ public class MyProvaDerby {
 				prep.executeUpdate();
 				
 				System.out.println("AutoCommit : " + conn.getAutoCommit() );
+			
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
